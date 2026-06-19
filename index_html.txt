@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ridhima ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+width:90%;
+max-width:700px;
+color:white;
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+z-index:10;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+#message{
+font-size:1.1rem;
+line-height:1.8;
+margin-top:20px;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+font-size:1rem;
+cursor:pointer;
+background:white;
+color:#ff4f81;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>🎂 Happy Birthday Ridhima 🎂</h1>
+
+<p id="message"></p>
+
+<button onclick="showWish()">Open Your Birthday Letter 💌</button>
+</div>
+
+<script>
+
+const text =
+`Dear Ridhima,
+
+Happy Birthday! 🎉
+
+Today is all about celebrating the wonderful person you are.
+
+I hope this year brings you happiness, success, good health, and countless beautiful memories.
+
+Thank you for being the kind, caring, and genuine person that you are. Your smile, your positivity, and your presence make a difference in ways you may not even realize.
+
+No matter where life takes you, I hope you continue to shine, grow, and achieve everything you dream of.
+
+May your special day be filled with laughter, love, and moments you'll always cherish.
+
+Once again,
+
+Happy Birthday, Ridhima! ❤️✨
+
+— Raj`;
+
+function showWish(){
+let i=0;
+const msg=document.getElementById("message");
+msg.innerHTML="";
+
+const typing=setInterval(()=>{
+msg.innerHTML+=text.charAt(i);
+i++;
+
+if(i>=text.length){
+clearInterval(typing);
+}
+},25);
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+heart.style.animationDuration=(Math.random()*3+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
